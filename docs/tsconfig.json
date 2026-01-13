@@ -1,0 +1,11 @@
+{
+  "extends": "../tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@my-lib/components": ["../packages/components/src"],
+      "@my-lib/components/*": ["../packages/components/src/*"]
+    }
+  },
+  "include": [".dumirc.ts", ".dumi/**/*", "**/*.md", "**/*.tsx", "**/*.ts"]
+}

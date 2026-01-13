@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "jsx": "react",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node",
+    "allowImportingTsExtensions": false,
+    "noEmit": true
+  },
+  "include": ["packages/*/src", "packages/*/__tests__"]
+}
