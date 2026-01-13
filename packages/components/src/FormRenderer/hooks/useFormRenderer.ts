@@ -69,7 +69,7 @@ export const useFormRenderer = (
   // 重置表单
   const resetFields = useCallback((): void => {
     if (form) {
-      form. resetFields();
+      form.resetFields();
     } else {
       setFormValues({});
     }

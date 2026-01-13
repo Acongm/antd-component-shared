@@ -1,12 +1,16 @@
 {
-  "extends": "./tsconfig.base.json",
+  "extends": "./tsconfig.json",
   "compilerOptions": {
     "jsx": "react",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "moduleResolution": "node",
-    "allowImportingTsExtensions": false,
-    "noEmit": true
+    "noEmit": true,
+    "types": ["jest", "@testing-library/jest-dom", "node"]
   },
-  "include": ["packages/*/src", "packages/*/__tests__"]
+  "include": [
+    "packages/*/src/**/*",
+    "packages/**/__tests__/**/*",
+    "jest.setup.ts",
+    "jest-dom.d.ts"
+  ]
 }

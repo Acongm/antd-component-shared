@@ -28,7 +28,7 @@ export interface FieldConfig {
   /** 标签 */
   label?:  ReactNode;
   /** 字段类型 */
-  type:  FieldType;
+  type: FieldType;
   /** 占位符 */
   placeholder?: string;
   /** 是否必填 */
@@ -46,7 +46,7 @@ export interface FieldConfig {
   /** 组件属性 */
   componentProps?: Record<string, unknown>;
   /** 自定义渲染 */
-  render?:  (field: FieldConfig, form: unknown) => ReactNode;
+  render?: (field: FieldConfig, form: unknown) => ReactNode;
   /** 验证规则 */
   rules?: FormItemProps['rules'];
   /** 栅格列数 */

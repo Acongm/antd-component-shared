@@ -185,19 +185,21 @@ export type ThemeMode = 'light' | 'dark';
  */
 export interface ThemeConfig {
   /** 主题模式 */
-  mode?:  ThemeMode;
+  mode?: ThemeMode;
   /** 自定义 Token */
   token?: Partial<DesignToken>;
+  /** 紧凑模式 */
+  compact?: boolean;
   /** 组件级别配置 */
   components?: {
-    [componentName: string]:  Partial<DesignToken> & Record<string, unknown>;
+    [componentName: string]: Partial<DesignToken> & Record<string, unknown>;
   };
   /** 是否继承 Antd 主题 */
   inherit?: boolean;
   /** CSS 变量前缀 */
   cssVarPrefix?: string;
   /** 算法 */
-  algorithm?:  AntdThemeConfig['algorithm'];
+  algorithm?: AntdThemeConfig['algorithm'];
 }
 
 /**
@@ -208,5 +210,5 @@ export interface ThemeContextValue {
   token: DesignToken;
   mode: ThemeMode;
   setMode: (mode: ThemeMode) => void;
-  setTheme: (theme:  Partial<ThemeConfig>) => void;
+  setTheme: (theme: Partial<ThemeConfig>) => void;
 }

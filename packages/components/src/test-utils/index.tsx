@@ -1,14 +1,14 @@
 import React, { ReactElement } from 'react';
-import { render, RenderOptions } from '@testing-library/react';
+import { render, RenderOptions, RenderResult } from '@testing-library/react';
 import { ConfigProvider } from 'antd';
 import zhCN from 'antd/locale/zh_CN';
 
-// 自定义渲染器，包含全局 Provider
+// 自定义渲染器,包含全局 Provider
 interface CustomRenderOptions extends Omit<RenderOptions, 'wrapper'> {
   locale?: typeof zhCN;
 }
 
-const AllTheProviders: React. FC<{
+const AllTheProviders: React.FC<{
   children: React.ReactNode;
   locale?: typeof zhCN;
 }> = ({ children, locale = zhCN }) => {
@@ -21,8 +21,8 @@ const AllTheProviders: React. FC<{
 
 const customRender = (
   ui: ReactElement,
-  options?:  CustomRenderOptions
-) => {
+  options?: CustomRenderOptions
+): RenderResult => {
   const { locale, ...renderOptions } = options || {};
   
   return render(ui, {
@@ -46,23 +46,23 @@ export const waitForComponentToPaint = async (wrapper: any) => {
 export const mockFormFields = [
   {
     name: 'username',
-    label:  '用户名',
+    label: '用户名',
     type: 'input' as const,
     required: true,
   },
   {
     name: 'email',
-    label:  '邮箱',
-    type:  'input' as const,
+    label: '邮箱',
+    type: 'input' as const,
     required: true,
   },
   {
     name: 'role',
-    label:  '角色',
+    label: '角色',
     type: 'select' as const,
     options: [
-      { label: '管理员', value:  'admin' },
-      { label:  '用户', value: 'user' },
+      { label: '管理员', value: 'admin' },
+      { label: '用户', value: 'user' },
     ],
   },
 ];

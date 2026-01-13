@@ -7,7 +7,7 @@ import { readFileSync } from 'fs';
 const pkg = JSON.parse(readFileSync('./package.json', 'utf-8'));
 
 const external = [
-  ... Object.keys(pkg.peerDependencies || {}),
+  ...Object.keys(pkg.peerDependencies || {}),
   ...Object.keys(pkg.dependencies || {}),
   /^antd/,
   /^react/,
@@ -18,7 +18,7 @@ export default [
   // ESM 构建
   {
     input: 'src/index.ts',
-    output:  {
+    output: {
       dir: 'dist/esm',
       format: 'esm',
       preserveModules: true,
@@ -29,9 +29,9 @@ export default [
       resolve(),
       commonjs(),
       typescript({
-        tsconfig:  './tsconfig.build.json',
+        tsconfig: './tsconfig.build.json',
         declaration: true,
-        declarationDir: 'dist/types',
+        declarationDir: 'dist/esm',
         outDir: 'dist/esm',
       }),
       postcss({

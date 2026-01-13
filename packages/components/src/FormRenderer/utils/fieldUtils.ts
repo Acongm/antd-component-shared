@@ -21,8 +21,12 @@ export const getFieldPlaceholder = (field:  FieldConfig): string => {
     custom: '',
   };
 
-  const action = actionMap[field.type] || '请输入';
-  return field.label ?  `${action}${field.label}` : action;
+  const action = actionMap[field.type];
+  // 对于 switch 和 custom 类型，action 为空字符串，直接返回
+  if (action === '') return '';
+  // 对于未知类型，使用默认值
+  const finalAction = action || '请输入';
+  return field.label ? `${finalAction}${field.label}` : finalAction;
 };
 
 /**
@@ -30,9 +34,9 @@ export const getFieldPlaceholder = (field:  FieldConfig): string => {
  */
 export const getRequiredMessage = (field: FieldConfig): string => {
   const isSelectType = ['select', 'radio', 'checkbox', 'datePicker', 'rangePicker'].includes(
-    field. type
+    field.type
   );
-  const action = isSelectType ?  '请选择' : '请输入';
+  const action = isSelectType ? '请选择' : '请输入';
   return field.label ? `${action}${field.label}` : `${action}该字段`;
 };
 
@@ -40,7 +44,7 @@ export const getRequiredMessage = (field: FieldConfig): string => {
  * 判断字段是否需要选项
  */
 export const isOptionsField = (type: FieldType): boolean => {
-  return ['select', 'radio', 'checkbox']. includes(type);
+  return ['select', 'radio', 'checkbox'].includes(type);
 };
 
 /**
@@ -64,7 +68,7 @@ export const normalizeOptions = (
 ): Array<{ label: string; value: string | number }> => {
   if (!options) return [];
   
-  return options. map((opt) => ({
+  return options.map((opt) => ({
     label: String(opt.label),
     value: opt.value,
     disabled: opt.disabled,

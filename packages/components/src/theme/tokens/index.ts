@@ -31,7 +31,7 @@ const shadow: ShadowToken = {
 };
 
 const baseToken = {
-  ... typography,
+  ...typography,
   ...spacing,
   ...motion,
   ...shadow,
@@ -55,7 +55,7 @@ const baseToken = {
  * 默认亮色主题 Token
  */
 export const defaultToken: DesignToken = {
-  ... baseToken,
+  ...baseToken,
   ...lightColors,
 };
 
@@ -72,10 +72,10 @@ export const darkToken: DesignToken = {
  */
 export const compactToken: DesignToken = {
   ...defaultToken,
-  ... compactSpacing,
+  ...compactSpacing,
   controlHeight: 28,
   controlHeightSM: 20,
-  controlHeightLG:  36,
+  controlHeightLG: 36,
   controlHeightXS: 14,
 };
 

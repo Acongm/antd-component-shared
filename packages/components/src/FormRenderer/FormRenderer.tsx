@@ -19,13 +19,13 @@ const { TextArea } = Input;
 const { RangePicker } = DatePicker;
 
 /** 字段组件映射 */
-const FIELD_COMPONENT_MAP: Record<FieldType, React. FC<any>> = {
+const FIELD_COMPONENT_MAP: Record<FieldType, React.FC<any>> = {
   input: Input,
   textarea: TextArea,
-  select:  Select,
-  radio: Radio. Group,
+  select: Select,
+  radio: Radio.Group,
   checkbox: Checkbox.Group,
-  switch:  Switch,
+  switch: Switch,
   datePicker: DatePicker,
   rangePicker: RangePicker,
   number: InputNumber,
@@ -99,7 +99,7 @@ export const FormRenderer: React.FC<FormRendererProps> = ({
 
       // 带选项的组件
       if (['select', 'radio', 'checkbox'].includes(type) && options) {
-        fieldComponentProps. options = options;
+        fieldComponentProps.options = options;
       }
 
       // Switch 使用 valuePropName
@@ -117,10 +117,10 @@ export const FormRenderer: React.FC<FormRendererProps> = ({
           label={label}
           valuePropName={valuePropName}
           rules={rules || defaultRules}
-          {... formItemProps}
+          {...formItemProps}
         >
-          <Component {... fieldComponentProps} />
-        </Form. Item>
+          <Component {...fieldComponentProps} />
+        </Form.Item>
       );
     },
     [form]
@@ -128,11 +128,11 @@ export const FormRenderer: React.FC<FormRendererProps> = ({
 
   // 过滤隐藏字段
   const visibleFields = useMemo(() => {
-    return fields. filter((field) => {
+    return fields.filter((field) => {
       if (typeof field.hidden === 'function') {
-        return !field.hidden(form. getFieldsValue());
+        return !field.hidden(form.getFieldsValue());
       }
-      return ! field.hidden;
+      return !field.hidden;
     });
   }, [fields, form]);
 
