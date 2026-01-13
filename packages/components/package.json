@@ -1,0 +1,43 @@
+{
+  "name": "@my-lib/components",
+  "version": "0.1.0",
+  "description": "React component library based on Antd",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/types/index.d. ts",
+  "sideEffects": [
+    "**/*.css",
+    "**/*.less"
+  ],
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "rollup -c -w",
+    "build": "rimraf dist && rollup -c",
+    "build:types": "tsc --emitDeclarationOnly"
+  },
+  "peerDependencies": {
+    "antd": ">=5.0.0",
+    "react": ">=17.0.0",
+    "react-dom": ">=17.0.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-typescript": "^11.1.5",
+    "antd": "^5.12.5",
+    "less": "^4.2.0",
+    "postcss": "^8.4.32",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "rimraf": "^5.0.5",
+    "rollup": "^4.9.1",
+    "rollup-plugin-postcss": "^4.0.2",
+    "tslib": "^2.6.2"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry":  "https://registry.npmjs.org/"
+  }
+}

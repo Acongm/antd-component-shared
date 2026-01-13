@@ -1,0 +1,33 @@
+module.exports = {
+  preset: 'ts-jest',
+  testEnvironment: 'jsdom',
+  roots: ['<rootDir>/packages'],
+  testMatch: ['**/__tests__/**/*.test.{ts,tsx}', '**/*. test.{ts,tsx}'],
+  moduleNameMapper: {
+    '^@my-lib/components$': '<rootDir>/packages/components/src',
+    '^@my-lib/hooks$': '<rootDir>/packages/hooks/src',
+    '\\.(css|less|scss)$': 'identity-obj-proxy',
+  },
+  setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
+  collectCoverageFrom:  [
+    'packages/*/src/**/*.{ts,tsx}',
+    '!packages/*/src/**/*. d.ts',
+    '!packages/*/src/**/index.ts',
+  ],
+  coverageThreshold: {
+    global: {
+      branches: 70,
+      functions:  70,
+      lines: 70,
+      statements: 70,
+    },
+  },
+  transform: {
+    '^.+\\.tsx?$':  [
+      'ts-jest',
+      {
+        tsconfig: 'tsconfig.test.json',
+      },
+    ],
+  },
+};
