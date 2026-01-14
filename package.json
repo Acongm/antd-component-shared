@@ -4,10 +4,10 @@
   "private": true,
   "description": "React component library based on Antd + TypeScript",
   "scripts": {
-    "dev": "pnpm --filter @acongmr/antd-components-shared dev",
+    "dev": "pnpm --filter @acongmr/antd-components dev",
     "dev:example": "pnpm --filter example dev",
     "build": "pnpm -r --filter \"./packages/**\" build",
-    "build:components": "pnpm --filter @acongmr/antd-components-shared build",
+    "build:components": "pnpm --filter @acongmr/antd-components build",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
@@ -26,7 +26,17 @@
     "publish:from-git": "lerna publish from-git --yes",
     "clean": "rimraf **/dist **/node_modules **/.turbo",
     "prepare": "husky install || true",
-    "publish:ci": "pnpm clean && pnpm version:patch && pnpm publish:from-git"
+    "publish:ci": "pnpm clean && pnpm version:patch && pnpm publish:from-git",
+    "version:components:patch": "lerna version patch --scope=@acongmr/antd-components --yes",
+    "version:components:minor": "lerna version minor --scope=@acongmr/antd-components --yes",
+    "version:components:major": "lerna version major --scope=@acongmr/antd-components --yes",
+    "version:hooks:patch": "lerna version patch --scope=@acongmr/antd-hooks --yes",
+    "version:hooks:minor": "lerna version minor --scope=@acongmr/antd-hooks --yes",
+    "version:hooks:major": "lerna version major --scope=@acongmr/antd-hooks --yes",
+    "publish:components": "lerna publish from-git --scope=@acongmr/antd-components --yes",
+    "publish:hooks": "lerna publish from-git --scope=@acongmr/antd-hooks --yes",
+    "publish:components:ci": "pnpm build:components && pnpm version:components:patch && pnpm publish:components",
+    "publish:hooks:ci": "pnpm version:hooks:patch && pnpm publish:hooks"
   },
   "devDependencies": {
     "lerna": "^8.2.0",
