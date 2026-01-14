@@ -442,9 +442,10 @@ describe('FormRenderer', () => {
         <FormRenderer fields={fields} columns={2} />
       );
 
-      const cols = container.querySelectorAll('.ant-col');
-      expect(cols[0]).toHaveClass('ant-col-24');
-      expect(cols[1]).toHaveClass('ant-col-12');
+      const row = container.querySelector('.ant-row');
+      const cols = row?.querySelectorAll('.ant-col');
+      expect(cols?.[0]).toHaveClass('ant-col-24');
+      expect(cols?.[1]).toHaveClass('ant-col-12');
     });
   });
 
