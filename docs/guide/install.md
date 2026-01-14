@@ -5,7 +5,7 @@
 推荐使用 pnpm 安装：
 
 ```bash
-pnpm add @acongm/antd-components-shared
+pnpm add @acongmr/antd-components-shared
 ```
 
 ## Peer Dependencies
@@ -28,10 +28,10 @@ pnpm add @acongm/antd-components-shared
 
 ```tsx
 // ✅ 推荐：按需引入
-import { FormRenderer } from '@acongm/antd-components-shared';
+import { FormRenderer } from '@acongmr/antd-components-shared';
 
 // ❌ 不推荐：全量引入
-import * as MyLib from '@acongm/antd-components-shared';
+import * as MyLib from '@acongmr/antd-components-shared';
 ```
 
 ## 样式引入
@@ -39,7 +39,7 @@ import * as MyLib from '@acongm/antd-components-shared';
 ### 方式一：全量引入样式
 
 ```tsx
-import '@acongm/antd-components-shared/dist/styles.css';
+import '@acongmr/antd-components-shared/dist/styles.css';
 ```
 
 ### 方式二：配合 Antd 使用
@@ -51,7 +51,7 @@ import '@acongm/antd-components-shared/dist/styles.css';
 组件库使用 TypeScript 编写，提供完整的类型定义，无需额外安装 `@types` 包。
 
 ```tsx
-import type { FieldConfig, FormRendererProps } from '@acongm/antd-components-shared';
+import type { FieldConfig, FormRendererProps } from '@acongmr/antd-components-shared';
 
 const fields: FieldConfig[] = [
   // 完整的类型提示

@@ -4,10 +4,10 @@
   "private": true,
   "description": "React component library based on Antd + TypeScript",
   "scripts": {
-    "dev": "pnpm --filter @acongm/antd-components-shared dev",
+    "dev": "pnpm --filter @acongmr/antd-components-shared dev",
     "dev:example": "pnpm --filter example dev",
     "build": "pnpm -r --filter \"./packages/**\" build",
-    "build:components": "pnpm --filter @acongm/antd-components-shared build",
+    "build:components": "pnpm --filter @acongmr/antd-components-shared build",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",

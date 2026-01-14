@@ -11,7 +11,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "antd": "^5.12.5",
-    "@acongm/antd-components-shared": "workspace:*"
+    "@acongmr/antd-components-shared": "workspace:*"
   },
   "devDependencies": {
     "vite": "^5.0.0",

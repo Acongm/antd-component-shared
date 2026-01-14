@@ -1,7 +1,7 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import 'antd/dist/reset.css';
-import { FormRenderer } from '@acongm/antd-components-shared';
+import { FormRenderer } from '@acongmr/antd-components-shared';
 import 'antd/dist/reset.css';
 
 const App = () => {

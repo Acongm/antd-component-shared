@@ -1,5 +1,5 @@
 {
-  "name": "@acongm/antd-components",
+  "name": "@acongmr/antd-components",
   "version": "0.1.2",
   "description": "React component library based on Antd",
   "main": "dist/cjs/index.js",
@@ -40,5 +40,5 @@
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
-  "gitHead": "8d5c6706d040bd24d292704abbbe3ff45fcc47d8"
+  "gitHead": "6a04040575a9cabe5f8f58f32ed1127ee7b74a26"
 }

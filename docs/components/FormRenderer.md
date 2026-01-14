@@ -5,7 +5,7 @@
 ## 基础用法
 
 ```tsx
-import { FormRenderer } from '@acongm/antd-components-shared';
+import { FormRenderer } from '@acongmr/antd-components-shared';
 
 export default () => {
   const fields = [
@@ -44,7 +44,7 @@ export default () => {
 通过 `columns` 属性设置表单的列数。
 
 ```tsx
-import { FormRenderer } from '@acongm/antd-components-shared';
+import { FormRenderer } from '@acongmr/antd-components-shared';
 
 export default () => {
   const fields = [
@@ -68,7 +68,7 @@ export default () => {
 ## 各种字段类型
 
 ```tsx
-import { FormRenderer } from '@acongm/antd-components-shared';
+import { FormRenderer } from '@acongmr/antd-components-shared';
 
 export default () => {
   const fields = [
@@ -154,7 +154,7 @@ export default () => {
 使用 `render` 方法自定义字段渲染。
 
 ```tsx
-import { FormRenderer } from '@acongm/antd-components-shared';
+import { FormRenderer } from '@acongmr/antd-components-shared';
 import { Slider } from 'antd';
 
 export default () => {

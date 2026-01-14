@@ -82,7 +82,7 @@ importers:
 
   docs:
     dependencies:
-      '@acongm/antd-components-shared':
+      '@acongmr/antd-components-shared':
         specifier: workspace:*
         version: link:../packages/components
     devDependencies:
@@ -98,7 +98,7 @@ importers:
 
   example:
     dependencies:
-      '@acongm/antd-components-shared':
+      '@acongmr/antd-components-shared':
         specifier: workspace:*
         version: link:../packages/components
       antd:
