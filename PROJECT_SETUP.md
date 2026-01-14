@@ -6,9 +6,7 @@
 
 ```
 antd-component-shared/
-├── .changeset/                    # Changesets 配置
-│   ├── config.json               # 版本管理配置
-│   └── README.md                 # Changesets 使用文档
+├── lerna.json                    # Lerna 配置
 ├── .github/
 │   └── workflows/                # GitHub Actions
 │       ├── ci.yml               # CI 流程（lint/test/build）
@@ -71,6 +69,7 @@ antd-component-shared/
 ├── jest.setup.js                # Jest 环境设置
 ├── package.json                 # 根 package.json
 ├── pnpm-workspace.yaml          # pnpm 工作区配置
+├── example/                      # 本地示例（Vite）
 ├── tsconfig.base.json           # 基础 TS 配置
 ├── tsconfig.test.json           # 测试 TS 配置
 └── README.md                    # 项目说明
@@ -160,31 +159,24 @@ pnpm format:check
 
 ## 📦 发布流程
 
-### 1. 创建 Changeset
+### 1. 版本号管理
 
 ```bash
-pnpm changeset
+pnpm version:patch
+# 或 pnpm version:minor / pnpm version:major
 ```
-
-按提示选择：
-- 修改的包
-- 版本变更类型（major/minor/patch）
-- 变更说明
 
 ### 2. 提交变更
 
 ```bash
 git add .
-git commit -m "feat: add new feature"
-git push
+git commit -m "chore(release): publish"
+git push --follow-tags
 ```
 
 ### 3. 自动发布
 
-合并到 main 分支后，GitHub Actions 会：
-1. 创建 Release PR
-2. 合并后自动发布到 npm
-3. 创建 GitHub Release
+推送 tag（例如 `v0.1.1`）后，GitHub Actions 会自动发布到 npm。
 
 ## 📝 文档
 
@@ -224,7 +216,7 @@ pnpm docs:build
 - **包管理**: pnpm
 - **文档**: Dumi 2.x
 - **测试**: Jest + React Testing Library
-- **版本管理**: Changesets
+- **版本管理**: Lerna
 - **CI/CD**: GitHub Actions
 
 ## 📋 可用脚本
@@ -239,10 +231,14 @@ pnpm docs:build
 | `pnpm lint:fix` | 修复 ESLint 错误 |
 | `pnpm typecheck` | TypeScript 类型检查 |
 | `pnpm format` | 格式化代码 |
+| `pnpm format:check` | 检查格式 |
 | `pnpm docs:dev` | 启动文档站点 |
 | `pnpm docs:build` | 构建文档 |
-| `pnpm changeset` | 创建 changeset |
-| `pnpm release` | 发布到 npm |
+| `pnpm dev:example` | 启动示例应用 |
+| `pnpm version:patch` | 版本号 +1（patch） |
+| `pnpm version:minor` | 版本号 +1（minor） |
+| `pnpm version:major` | 版本号 +1（major） |
+| `pnpm publish:from-git` | 从 tag 发布到 npm |
 
 ## 🔧 配置说明
 

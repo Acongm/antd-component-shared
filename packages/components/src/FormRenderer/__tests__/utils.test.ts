@@ -24,7 +24,7 @@ describe('fieldUtils', () => {
     it('should generate placeholder for input field', () => {
       const field: FieldConfig = {
         name: 'username',
-        label:  '用户名',
+        label: '用户名',
         type: 'input',
       };
 
@@ -32,9 +32,9 @@ describe('fieldUtils', () => {
     });
 
     it('should generate placeholder for select field', () => {
-      const field:  FieldConfig = {
+      const field: FieldConfig = {
         name: 'role',
-        label:  '角色',
+        label: '角色',
         type: 'select',
       };
 
@@ -42,9 +42,9 @@ describe('fieldUtils', () => {
     });
 
     it('should return empty string for switch field', () => {
-      const field:  FieldConfig = {
+      const field: FieldConfig = {
         name: 'active',
-        label:  '启用',
+        label: '启用',
         type: 'switch',
       };
 
@@ -57,7 +57,7 @@ describe('fieldUtils', () => {
       const field: FieldConfig = {
         name: 'username',
         label: '用户名',
-        type:  'input',
+        type: 'input',
       };
 
       expect(getRequiredMessage(field)).toBe('请输入用户名');
@@ -65,7 +65,7 @@ describe('fieldUtils', () => {
 
     it('should return select message for select fields', () => {
       const field: FieldConfig = {
-        name:  'role',
+        name: 'role',
         label: '角色',
         type: 'select',
       };
@@ -74,9 +74,9 @@ describe('fieldUtils', () => {
     });
 
     it('should return select message for date picker fields', () => {
-      const field:  FieldConfig = {
+      const field: FieldConfig = {
         name: 'date',
-        label:  '日期',
+        label: '日期',
         type: 'datePicker',
       };
 
@@ -110,7 +110,7 @@ describe('fieldUtils', () => {
     it('should return field colSpan when provided', () => {
       const field: FieldConfig = {
         name: 'test',
-        label:  'Test',
+        label: 'Test',
         type: 'input',
         colSpan: 8,
       };
@@ -120,7 +120,7 @@ describe('fieldUtils', () => {
 
     it('should calculate colSpan based on columns', () => {
       const field: FieldConfig = {
-        name:  'test',
+        name: 'test',
         label: 'Test',
         type: 'input',
       };
@@ -139,8 +139,8 @@ describe('fieldUtils', () => {
 
     it('should normalize options correctly', () => {
       const options = [
-        { label:  'Option 1', value: 1 },
-        { label: 'Option 2', value:  2, disabled: true },
+        { label: 'Option 1', value: 1 },
+        { label: 'Option 2', value: 2, disabled: true },
       ];
 
       const result = normalizeOptions(options);
@@ -167,14 +167,14 @@ describe('fieldUtils', () => {
       const target = { a: 1, b: 2 };
       const source = { b: 3, c: 4 };
 
-      expect(deepMerge(target, source)).toEqual({ a:  1, b:  3, c:  4 });
+      expect(deepMerge(target, source)).toEqual({ a: 1, b: 3, c: 4 });
     });
 
     it('should merge nested objects', () => {
       const target = { a: 1, nested: { x: 1, y: 2 } };
       const source = { nested: { y: 3, z: 4 } };
 
-      expect(deepMerge(target, source)).toEqual({
+      expect(deepMerge(target, source as any)).toEqual({
         a: 1,
         nested: { x: 1, y: 3, z: 4 },
       });
@@ -184,7 +184,7 @@ describe('fieldUtils', () => {
       const target = { a: 1 };
       const source = { b: 2 };
 
-      deepMerge(target, source);
+      deepMerge(target, source as any);
 
       expect(target).toEqual({ a: 1 });
       expect(source).toEqual({ b: 2 });

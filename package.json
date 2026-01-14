@@ -4,9 +4,10 @@
   "private": true,
   "description": "React component library based on Antd + TypeScript",
   "scripts": {
-    "dev": "pnpm --filter @my-lib/components dev",
+    "dev": "pnpm --filter @acongm/antd-components-shared dev",
+    "dev:example": "pnpm --filter example dev",
     "build": "pnpm -r --filter \"./packages/**\" build",
-    "build:components": "pnpm --filter @my-lib/components build",
+    "build:components": "pnpm --filter @acongm/antd-components-shared build",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
@@ -18,14 +19,16 @@
     "format:check": "prettier --check \"packages/**/*.{ts,tsx,js,jsx,json,md}\"",
     "docs:dev": "pnpm --filter docs dev",
     "docs:build": "pnpm --filter docs build",
-    "changeset": "changeset",
-    "version-packages": "changeset version",
-    "release": "pnpm build && changeset publish",
+    "lerna": "lerna",
+    "version:patch": "lerna version patch --yes",
+    "version:minor": "lerna version minor --yes",
+    "version:major": "lerna version major --yes",
+    "publish:from-git": "lerna publish from-git --yes",
     "clean": "rimraf **/dist **/node_modules **/.turbo",
     "prepare": "husky install || true"
   },
   "devDependencies": {
-    "@changesets/cli": "^2.27.1",
+    "lerna": "^8.2.0",
     "@testing-library/jest-dom": "^6.1.5",
     "@testing-library/react": "^14.1.2",
     "@testing-library/user-event": "^14.5.1",
@@ -51,7 +54,7 @@
     "typescript": "^5.3.3"
   },
   "engines": {
-    "node": ">=16.0.0",
+    "node": ">=18.0.0",
     "pnpm": ">=8.0.0"
   },
   "packageManager": "pnpm@8.15.0"

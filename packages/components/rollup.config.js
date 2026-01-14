@@ -35,7 +35,7 @@ export default [
         outDir: 'dist/esm',
       }),
       postcss({
-        extract: 'styles. css',
+        extract: 'styles.css',
         minimize: true,
         use: ['less'],
       }),

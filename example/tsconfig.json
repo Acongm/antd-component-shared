@@ -1,11 +1,16 @@
 {
   "extends": "../tsconfig.base.json",
   "compilerOptions": {
+    "outDir": "dist",
+    "rootDir": "src",
+    "types": ["vite/client"],
     "baseUrl": ".",
     "paths": {
       "@acongm/antd-components-shared": ["../packages/components/src"],
       "@acongm/antd-components-shared/*": ["../packages/components/src/*"]
     }
   },
-  "include": [".dumirc.ts", ".dumi/**/*", "**/*.md", "**/*.tsx", "**/*.ts"]
+  "include": [
+    "src/**/*"
+  ]
 }

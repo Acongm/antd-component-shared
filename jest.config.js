@@ -7,8 +7,8 @@ module. exports = {
     '**/*. test.{ts,tsx}',
   ],
   moduleNameMapper: {
-    '^@my-lib/components$': '<rootDir>/packages/components/src',
-    '^@my-lib/components/(. *)$': '<rootDir>/packages/components/src/$1',
+    '^@acongm/antd-components-shared$': '<rootDir>/packages/components/src',
+    '^@acongm/antd-components-shared/(. *)$': '<rootDir>/packages/components/src/$1',
     '^@my-lib/hooks$': '<rootDir>/packages/hooks/src',
     '\\.(css|less|scss|sass)$': 'identity-obj-proxy',
   },

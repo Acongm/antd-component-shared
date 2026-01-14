@@ -44,7 +44,7 @@ jobs:
         run:  pnpm install --frozen-lockfile
 
       - name: Build components
-        run: pnpm --filter @my-lib/components build
+        run: pnpm --filter @acongm/antd-components-shared build
 
       - name: Build docs
         run:  pnpm --filter docs build

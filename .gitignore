@@ -45,9 +45,7 @@ lerna-debug.log*
 # TypeScript
 *.tsbuildinfo
 
-# Changeset
-.changeset/*.md
-!.changeset/README.md
-
 # Vercel
 .vercel
+
+.pnpm-store/*

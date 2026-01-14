@@ -9,7 +9,7 @@
     "preview": "dumi preview"
   },
   "dependencies": {
-    "@my-lib/components": "workspace:*"
+    "@acongm/antd-components-shared": "workspace:*"
   },
   "devDependencies": {
     "@umijs/lint": "^4.0.89",

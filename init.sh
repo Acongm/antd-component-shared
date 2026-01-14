@@ -7,7 +7,7 @@ mkdir my-component-lib && cd my-component-lib
 git init
 
 # 创建目录结构
-mkdir -p . changeset
+mkdir -p .
 mkdir -p .github/workflows
 mkdir -p . husky
 mkdir -p docs/{guide,components}
@@ -19,9 +19,6 @@ pnpm init
 
 # 安装依赖
 pnpm install
-
-# 初始化 changeset
-pnpm changeset init
 
 # 初始化 husky
 pnpm husky install

@@ -2,7 +2,8 @@ name: Release
 
 on:
   push:
-    branches: [main]
+    tags:
+      - 'v*'
 
 concurrency:
   group: ${{ github. workflow }}-${{ github.ref }}
@@ -13,8 +14,6 @@ jobs:
     name:  Release
     runs-on: ubuntu-latest
     permissions:
-      contents:  write
-      pull-requests: write
       id-token: write
 
     steps:
@@ -41,33 +40,7 @@ jobs:
       - name: Build packages
         run:  pnpm build
 
-      - name: Create Release Pull Request or Publish
-        id: changesets
-        uses:  changesets/action@v1
-        with: 
-          version: pnpm changeset version
-          publish: pnpm changeset publish
-          commit: 'chore: release packages'
-          title: 'chore: release packages'
+      - name: Publish packages
+        run: pnpm publish:from-git
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          NODE_AUTH_TOKEN:  ${{ secrets.NPM_TOKEN }}
-
-      - name: Create GitHub Release
-        if: steps.changesets.outputs.published == 'true'
-        uses: actions/github-script@v7
-        with: 
-          script: |
-            const publishedPackages = ${{ steps.changesets.outputs.publishedPackages }};
-            for (const pkg of publishedPackages) {
-              await github.rest.repos.createRelease({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                tag_name: `${pkg.name}@${pkg. version}`,
-                name: `${pkg.name}@${pkg.version}`,
-                body: `Release ${pkg.name}@${pkg.version}`,
-                draft: false,
-                prerelease:  false,
-              });
-            }
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
