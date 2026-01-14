@@ -9,7 +9,7 @@ module. exports = {
   moduleNameMapper: {
     '^@acongm/antd-components-shared$': '<rootDir>/packages/components/src',
     '^@acongm/antd-components-shared/(. *)$': '<rootDir>/packages/components/src/$1',
-    '^@my-lib/hooks$': '<rootDir>/packages/hooks/src',
+    '^@acongm/antd-components-shared$': '<rootDir>/packages/hooks/src',
     '\\.(css|less|scss|sass)$': 'identity-obj-proxy',
   },
   setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],

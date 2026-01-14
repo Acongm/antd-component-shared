@@ -1,5 +1,5 @@
 {
-  "name": "@my-lib/hooks",
+  "name": "@acongm/antd-components-shared",
   "version": "0.1.1",
   "private": true,
   "description": "React hooks library",
