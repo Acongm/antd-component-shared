@@ -10,7 +10,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "echo 'Hooks package - placeholder for future hooks'"
+    "build": "rimraf dist && echo 'Building hooks package...' && mkdir -p dist/cjs dist/esm dist/types && echo 'export {};' > dist/cjs/index.js && echo 'export {};' > dist/esm/index.js && echo 'export {};' > dist/types/index.d.ts"
   },
   "peerDependencies": {
     "react": ">=17.0.0"
