@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/lerna/schemas/lerna-schema.json",
-  "version": "0.1.0",
+  "version": "independent",
   "npmClient": "pnpm",
   "useWorkspaces": true,
   "packages": ["packages/*"],
@@ -8,6 +8,9 @@
     "version": {
       "tagVersionPrefix": "v",
       "message": "chore(release): publish"
+    },
+    "publish": {
+      "yes": true
     }
   }
 }

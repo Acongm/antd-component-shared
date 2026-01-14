@@ -25,7 +25,8 @@
     "version:major": "lerna version major --yes",
     "publish:from-git": "lerna publish from-git --yes",
     "clean": "rimraf **/dist **/node_modules **/.turbo",
-    "prepare": "husky install || true"
+    "prepare": "husky install || true",
+    "publish:ci": "pnpm clean && pnpm version:patch && pnpm publish:from-git"
   },
   "devDependencies": {
     "lerna": "^8.2.0",
