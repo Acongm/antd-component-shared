@@ -6,8 +6,8 @@
     "types": ["vite/client"],
     "baseUrl": ".",
     "paths": {
-      "@acongmr/antd-components-shared": ["../packages/components/src"],
-      "@acongmr/antd-components-shared/*": ["../packages/components/src/*"]
+      "@acongmr/antd-components": ["../packages/components/src"],
+      "@acongmr/antd-components/*": ["../packages/components/src/*"]
     }
   },
   "include": [

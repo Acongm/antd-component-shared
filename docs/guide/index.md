@@ -22,19 +22,19 @@ My Component Lib 是一个基于 Antd 的企业级 React 组件库，提供了�
 
 ```bash
 # npm
-npm install @acongmr/antd-components-shared antd
+npm install @acongmr/antd-components antd
 
 # yarn
-yarn add @acongmr/antd-components-shared antd
+yarn add @acongmr/antd-components antd
 
 # pnpm
-pnpm add @acongmr/antd-components-shared antd
+pnpm add @acongmr/antd-components antd
 ```
 
 ## 基础使用
 
 ```tsx
-import { FormRenderer } from '@acongmr/antd-components-shared';
+import { FormRenderer } from '@acongmr/antd-components';
 
 const fields = [
   {

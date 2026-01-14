@@ -13,13 +13,13 @@
 ## 安装
 
 ```bash
-pnpm add @acongmr/antd-components-shared antd
+pnpm add @acongmr/antd-components antd
 ```
 
 ## 快速开始
 
 ```tsx
-import { FormRenderer } from '@acongmr/antd-components-shared';
+import { FormRenderer } from '@acongmr/antd-components';
 
 const fields = [
   {

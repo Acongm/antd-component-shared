@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      '@acongmr/antd-components-shared': path.resolve(
+      '@acongmr/antd-components': path.resolve(
         __dirname,
         '../packages/components/src'
       ),

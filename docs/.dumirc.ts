@@ -70,7 +70,7 @@ export default defineConfig({
 
   // 别名配置
   alias:  {
-    '@acongmr/antd-components-shared':  '../packages/components/src',
+    '@acongmr/antd-components':  '../packages/components/src',
   },
 
   // 主题配置
